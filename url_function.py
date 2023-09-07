@@ -193,9 +193,9 @@ def feature_extract(urldata):
 
   def protocol(url):
     if url[0:5] == 'https':
-      return -1
+      return -2
     elif  url[0:4] == 'http':
-      return 1
+      return 2
     return 0
   urldata['protocol'] = urldata['url'].apply(lambda i: protocol(i))
 
