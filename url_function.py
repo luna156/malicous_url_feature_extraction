@@ -165,8 +165,8 @@ def feature_extract(urldata):
     alexa_10k_list.append(alexa_10k['domain'][i])
 
   def dom_alexa_rank(url):
-    parse = urlparse(url)
-    domain = parse.netloc
+    ext = tldextract.extract(url)
+    domain = ext.domain + '.' + ext.suffix 
     if domain in alexa_10k_list:
       return 1
     else:
