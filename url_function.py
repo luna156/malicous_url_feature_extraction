@@ -113,40 +113,40 @@ def feature_extract(urldata):
 
 #도메인과 URL의 길이 비율
   def len_Domain_ratio(url):
-    url = urlparse(url)
     url_len = len(url)
+    url = urlparse(url)
     domain = len(url.netloc)
     return domain / url_len
   urldata['len_Domain_ratio'] = urldata['url'].apply(lambda i: len_Domain_ratio(i))
 
 #Path와 URL의 길이 비율
   def len_Path_ratio(url):
-    url = urlparse(url)
     url_len = len(url)
+    url = urlparse(url)
     path = len(url.path)
     return path / url_len
   urldata['len_Path_ratio'] = urldata['url'].apply(lambda i: len_Path_ratio(i))
 
 #파라미터와 URL의 길이 비율
   def len_Params_ratio(url):
-    url = urlparse(url)
     url_len = len(url)
+    url = urlparse(url)
     params = len(url.params)
     return params / url_len
   urldata['len_Params_ratio'] = urldata['url'].apply(lambda i: len_Params_ratio(i))
 
 #Query와 URL의 길이 비율
   def len_Query_ratio(url):
-    url = urlparse(url)
     url_len = len(url)
+    url = urlparse(url)
     query = len(url.query)
     return query / url_len
   urldata['len_Query_ratio'] = urldata['url'].apply(lambda i: len_Query_ratio(i))
 
 #fragment와 URL의 길이 비율
   def len_Fragment_ratio(url):
-    url = urlparse(url)
     url_len = len(url)
+    url = urlparse(url)
     fragment = len(url.fragment)
     return fragment / url_len
   urldata['len_Fragment_ratio'] = urldata['url'].apply(lambda i: len_Fragment_ratio(i))
