@@ -9,6 +9,16 @@ def fd_length(parsedpath):
 
 
 def feature_extract(urldata):
+  def parsetest(url):
+    try:
+      urlparse(url if url[0:4] =='http' else "//" + url)
+      return True
+    except:
+      return False
+
+  tmp = urldata['url'].apply(lambda i: parsetest(i)) 
+  urldata = urldata[tmp == True]
+
   #Famous Domain check
   
   #alexa_10k = pd.read_csv(colab_path + 'cloudflare-radar-domains-top-100000-20230821-20230828.csv')
